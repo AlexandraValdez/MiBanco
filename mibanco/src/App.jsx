@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+
+import "./App.css";
+import GoogleMapReact from "./maps";
+import markerImageAgencia from "./img/agencias.svg";
+import markerImageAgentes from "./img/agentes.svg";
+import markerImageCajeros from "./img/cajeros.svg";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  // -77,000444	-12,048099
+  // let imagen= 'agencias'
+  // markerImage={require(`./img/${imagen}.svg`)}
+  const markers = [
+    { lat: -12.048099, lng: -77.000444, image:  markerImageAgentes},
+    { lat: -12.049, lng: -77.001, image: markerImageCajeros },
+    { lat: -12.05, lng: -77.002, image: markerImageAgencia },
+    // Agrega más marcadores aquí
+  ];
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="App">
+        <GoogleMapReact
+          lat={-12.048099}
+          lng={-77.000444}
+         // markerImage={markerImageAgencia}
+          markers={markers}
+          //markerImage={agencias}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
