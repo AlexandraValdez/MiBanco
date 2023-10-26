@@ -49,9 +49,9 @@ function App() {
     <>
       <Buscador />
       <Mapa />
-      {/* <BannerApp />
+      <BannerApp />
       <Contactanos />
-      <Siguenos /> */}
+      <Siguenos />
       {/* <Agencias /> */}
     </>
   );

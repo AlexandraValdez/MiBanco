@@ -10,14 +10,16 @@
 //   return <div>Mapa</div>;
 // }
 
-
+import maps from "../assets/maps.jpg";
 
 const Mapa = () => {
   return (
-    <div className="container fluid">
-      Mapa
-    </div>
-  )
-}
+    <>
+      <div className="container-fluid">
+        <img src={maps} alt="" />
+      </div>
+    </>
+  );
+};
 
-export default Mapa
+export default Mapa;

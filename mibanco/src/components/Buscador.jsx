@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Agencias from "../assets/Agencias.svg";
 import Agentes from "../assets/Agentes.svg";
 import Cajeros from "../assets/Cajeros.svg";

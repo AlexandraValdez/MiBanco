@@ -1,21 +1,19 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  /* margin: 0 auto; */
   text-align: center;
 }
 
 p {
   margin: 0;
 }
+
 /* mapa */
 
 .container-fluid {
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0;
   padding-left: 0;
   padding-right: 0;
-  border: 1solid black;
   width: auto;
   height: auto;
 }
@@ -23,15 +21,17 @@ p {
 /* Buscador */
 
 .buscador-container {
+  position: absolute;
   height: 96px;
   padding-left: 10px;
   padding-right: 10px;
-  margin-top: 16px;
+  margin-top: 64px;
   width: 94%;
-  margin-left: 3%;
+  margin-left: 70px;
   border-radius: 12px;
   transform: translateY(0px);
   transition: transform 0.5s ease;
+  background-color: white;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -98,8 +98,7 @@ p {
 
 /* media query buscador */
 
-@media (max-width: 768px) {
-  /* Oculta el elemento <p> en pantalla móvil */
+@media (max-width: 425px) {
   .text-content {
     display: none;
   }
@@ -111,9 +110,9 @@ p {
     position: absolute;
     border-radius: 12px;
     height: 121px;
-    padding-left: 32px;
-    margin-left: auto;
+    padding-left: 20px;
     margin-top: 64px;
     padding-right: 0px;
   }
 }
+
