@@ -1,35 +1,60 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect } from "react";
+import "./App.css";
+import { getCajerosBcp, getAgentesKasnet, getAgenciasMibanco } from "./services/api";
+import BannerApp from "./components/BannerApp";
+import Contactanos from "./components/Contactanos";
+import Siguenos from "./components/Siguenos";
+import Mapa from "./components/Mapa.jsx";
+import Buscador from "./components/Buscador";
 
 function App() {
-  const [count, setCount] = useState(0)
+  useEffect(() => {
+    getAgentesKasnet()
+      .then((response) => {
+        console.log("KASNET:   ", response);
+      })
+      .catch((error) => {
+        console.log(error);
+      }),
+      getCajerosBcp()
+        .then((response) => {
+          console.log("BCP:   ", response);
+        })
+        .catch((error) => {
+          console.log(error);
+        }),
+        getAgenciasMibanco()
+        .then((response) => {
+          console.log("MIBANCO:   ", response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+  }, []);
+
+  // useEffect(() => {
+  //   Promise.all([getAgentesKasnet(), getCajerosBcp(), getAgenciasMibanco()])
+  //     .then(([kasnetData, bcpData, mibancoData]) => {
+  //       console.log("KASNET:   ", kasnetData);
+  //       console.log("BCP:   ", bcpData);
+  //       console.log("MIBANCO:   ", mibancoData);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
+
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Buscador />
+      <Mapa />
+      <BannerApp />
+      <Contactanos />
+      <Siguenos />
+      {/* <Agencias /> */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
