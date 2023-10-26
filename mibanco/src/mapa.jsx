@@ -5,6 +5,7 @@ import markerImageAgentes from "./img/agentes.svg";
 
 //https://ubicatuagente.agentekasnet.com/ubicatuagente/Home/AgenteUbiGet?q=-11.896579686970234%26-77.04242582549773
 
+
 const CustomMarker = ({ imageSrc }) => (
   <div style={{ width: "30px", height: "30px" }}>
     <img
@@ -21,6 +22,12 @@ function Maps({ lat, lng, markersAgentes, markersAgencias }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+
+
+    const baseUrl = "https://ubicatuagente.agentekasnet.com/ubicatuagente/Home/AgenteUbiGet";
+    
+
+
     // Comprobar si el navegador admite la API de geolocalización
     if ("geolocation" in navigator) {
       // Obtener la ubicación del usuario
@@ -50,11 +57,16 @@ function Maps({ lat, lng, markersAgentes, markersAgencias }) {
       setLoading(false); // Establecer el estado de carga en falso en caso de falta de soporte
     }
   }, []);
+    // Definir los parámetros que deseas enviar en la URL
+    const latFija = -11.896579686970234;
+    const lngFija = -77.04242582549773;
+  const queryParams = `?q=${latFija}%26${lngFija}`;
+  const KASNET_API_URL = baseUrl + queryParams;
 
   const defaultProps = {
     center: {
-      lat: latitud, // Usa latitud obtenida o lat por defecto -33.4102528
-      lng: longitud , // Usa longitud obtenida o lng por defecto -70.5789952
+      lat: latitud, // Usa latitud obtenida  -33.4102528
+      lng: longitud, // Usa longitud obtenida  -70.5789952
     },
     zoom: 16,
   };
