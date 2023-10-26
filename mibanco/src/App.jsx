@@ -1,37 +1,57 @@
 import { useEffect } from "react";
 import "./App.css";
-// import { getBCPAgencies } from "./services/Bcp";
-import { getAgenciasBcp } from "./services/api";
-// import Agencias from "./components/Agencias";
+import { getCajerosBcp, getAgentesKasnet, getAgenciasMibanco } from "./services/api";
 import BannerApp from "./components/BannerApp";
 import Contactanos from "./components/Contactanos";
 import Siguenos from "./components/Siguenos";
+import Mapa from "./components/Mapa.jsx";
+import Buscador from "./components/Buscador";
 
 function App() {
   useEffect(() => {
-    getAgenciasBcp()
-    .then((response) => {
-      console.log("aqui:   ",response);
-    }).catch((error) => {
-      console.log(error);
-    })
+    getAgentesKasnet()
+      .then((response) => {
+        console.log("KASNET:   ", response);
+      })
+      .catch((error) => {
+        console.log(error);
+      }),
+      getCajerosBcp()
+        .then((response) => {
+          console.log("BCP:   ", response);
+        })
+        .catch((error) => {
+          console.log(error);
+        }),
+        getAgenciasMibanco()
+        .then((response) => {
+          console.log("MIBANCO:   ", response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
   }, []);
 
-  // const getAgencias = async () => {
-  //   try {
-  //     const response = await getBCPAgencies();
-  //     console.log(response.data);
-  //   } catch (error) {
-  //     console.error("Error al obtener pedidos", error);
-  //     // Trata el error de acuerdo a tus necesidades
-  //   }
-  // };
+  // useEffect(() => {
+  //   Promise.all([getAgentesKasnet(), getCajerosBcp(), getAgenciasMibanco()])
+  //     .then(([kasnetData, bcpData, mibancoData]) => {
+  //       console.log("KASNET:   ", kasnetData);
+  //       console.log("BCP:   ", bcpData);
+  //       console.log("MIBANCO:   ", mibancoData);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
+
 
   return (
     <>
-      <BannerApp />
+      <Buscador />
+      <Mapa />
+      {/* <BannerApp />
       <Contactanos />
-      <Siguenos />
+      <Siguenos /> */}
       {/* <Agencias /> */}
     </>
   );
