@@ -1,5 +1,8 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
+import markerImageAgencia from "./img/agencias.svg";
+import markerImageAgentes from "./img/agentes.svg";
+import markerImageCajeros from "./img/cajeros.svg";
 
 const CustomMarker = ({ imageSrc }) => (
   <div style={{ width: "30px", height: "30px" }}>
@@ -11,7 +14,7 @@ const CustomMarker = ({ imageSrc }) => (
   </div>
 );
 
-function Maps({ lat, lng, markerImage, markers }) {
+function Maps({ lat, lng, markersAgentes, markersAgencias }) {
   const defaultProps = {
     center: {
       lat: lat,
@@ -21,7 +24,7 @@ function Maps({ lat, lng, markerImage, markers }) {
   };
 
   return (
-    <div style={{ height: "50vh", width: "50%" }}>
+    <div style={{ height: "50vh", width: "100%" }}>
       <GoogleMapReact
         bootstrapURLKeys={{
           key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
@@ -30,12 +33,20 @@ function Maps({ lat, lng, markerImage, markers }) {
         defaultZoom={defaultProps.zoom}
       >
 
-        {markers.map((marker, index) => (
+        {markersAgencias.map((marker, index) => (
           <CustomMarker
             key={index}
             lat={marker.lat}
             lng={marker.lng}
             imageSrc={marker.image}
+          />
+        ))}
+        {markersAgentes.map((marker, index) => (
+          <CustomMarker
+            key={index}
+            lat={marker.lat}
+            lng={marker.lng}
+            imageSrc={markerImageAgentes}
           />
         ))}
       </GoogleMapReact>
