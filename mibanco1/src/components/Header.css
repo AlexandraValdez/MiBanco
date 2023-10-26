@@ -1,0 +1,79 @@
+/* Cambiar el color de fondo y el color del texto de los botones */
+.btn1 {
+  background-color: #84240f; /* Color de fondo del botón */
+  color: #FFFFFF; /* Color del texto del botón */
+  width: 100px; /* Ancho del botón */
+  height: 40px; /* Alto del botón */
+}
+
+.btn2 {
+  background-color: #ff006a; /* Color de fondo del botón */
+  color: #FFFFFF; /* Color del texto del botón */
+  width: 100px; /* Ancho del botón */
+  height: 40px; /* Alto del botón */
+}
+
+.header-banner {
+  width: 100%;
+  height: auto;
+  right: 0%;
+  left: 0%;
+  background-color: #8d1a1a;
+
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .header-banner {
+    width: 100%;
+}
+.d-inline-block{
+  width: 80px;
+  height: 40px;
+  flex-shrink: 0;
+}
+}
+/* Smartphones (portrait & landscape) */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+}
+/* Smartphones (landscape) */
+@media only screen 
+and (min-width : 321px) {
+}
+/* Smartphones (portrait) */
+@media only screen 
+and (max-width : 320px) {
+}
+/* iPads (portrait & landscape) */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+}
+/* iPads (landscape) */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+}
+/* iPads (portrait) */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+}
+/* Ordenadores de sobremesa y portátiles */
+@media only screen 
+and (min-width : 1224px) {
+}
+/* Pantallas grandes */
+@media only screen 
+and (min-width : 1824px) {
+}
+/* iPhone 4 */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+}

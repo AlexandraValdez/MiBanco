@@ -1,0 +1,36 @@
+.searchContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.searchBox {
+  position: relative;
+}
+
+.searchButton {
+  position: absolute;
+  right: 8px;
+  top: 0;
+  height: 100%;
+}
+
+.searchInput {
+  font-size: 1.2rem;
+  height: 30px;
+  border-radius: 10px;
+  padding: 5px 30px 5px 10px;
+  border: 1px solid white;
+  right:  10px;
+  /* Posicionamos la cabecera al lado izquierdo */
+  top: 0;
+  /* Posicionamos la cabecera pegada arriba */
+  position: fixed;
+  /* Hacemos que la cabecera tenga una posición fija */
+}
+
+.searchInput:focus,
+.searchButton:focus {
+  outline: none;
+  border: 1px solid #8edcf8;
+  box-shadow: 0 0 5px #2a9879;
+}
