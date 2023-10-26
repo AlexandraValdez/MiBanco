@@ -6,11 +6,31 @@
 }
 #btn1{
   background-color: #FAB500;
+  border-radius: 28px;
+  border-color: #FAB500;
 }
 #btn2{
   background-color: #FFFFFF;
+  border-radius: 28px;
+  border-color: #FAB500;
 }
-
+#container{
+  background: conic-gradient(from .5turn at center left, rgb(107, 190, 173), rgb(174, 241, 241));
+  height: 60px;
+  width: 100%;
+  /* hacemos que la cabecera ocupe el ancho completo de la página */
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  /* Hacemos que la cabecera tenga una posición fija */
+}
+@keyframes adjust-header {
+  to {
+    font-size: 40px;
+    height: 240px;
+  }
+}
 .logo {
   height: 6em;
   padding: 1.5em;

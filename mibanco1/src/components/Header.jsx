@@ -7,15 +7,15 @@ import './Header.css';
 
 const Header = () => {
   return (
-    <div className="header-container">
+    <div id='container' className="header-container" >
     <div><img src={banner} alt="Banner" className="header-banner" /></div>
-    <Navbar bg="light" variant="light" expand="lg">
+    <div className='barra'><Navbar bg="#FFFFFF" variant="light" expand="lg">
       <Navbar.Brand href="#">
-        <img alt="Logo" src={logotipo} width="150" height="80" className="d-inline-block align-top" />
+        <img alt="Logo"  src={logotipo} width="250" height="160" className="d-inline-block align-top" />
       </Navbar.Brand>
       <Nav className="ml-auto">
-        <Button variant="primary" id='btn1' style={{ color: '#FFFFFF', width: '150px', height: '40px' }}>Banco</Button>
-        <Button variant="primary" id='btn2' style={{ color: '#FAB500', width: '800px', height: '40px' }}>Ahorra</Button>
+        <Button variant="primary" id='btn1' style={{ color: '#FFFFFF', width: '200px', height: '50px' }}>Banco</Button>
+        <Button variant="primary" id='btn2' style={{ color: '#FAB500', width: '200px', height: '50px' }}>Ahorra</Button>
       </Nav>
       <Navbar.Toggle aria-controls="navbar-menu" />
       <Navbar.Collapse id="navbar-menu">
@@ -25,6 +25,7 @@ const Header = () => {
         </Nav>
       </Navbar.Collapse>
     </Navbar>
+    </div>
   </div>
  
   );

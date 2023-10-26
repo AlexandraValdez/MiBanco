@@ -1,30 +1,20 @@
-/* Cambiar el color de fondo y el color del texto de los botones */
-.btn1 {
-  background-color: #84240f; /* Color de fondo del botón */
-  color: #FFFFFF; /* Color del texto del botón */
-  width: 100px; /* Ancho del botón */
-  height: 40px; /* Alto del botón */
-}
+#navbar-menu{
+  display: flex;
 
-.btn2 {
-  background-color: #ff006a; /* Color de fondo del botón */
-  color: #FFFFFF; /* Color del texto del botón */
-  width: 100px; /* Ancho del botón */
-  height: 40px; /* Alto del botón */
+  left: 10px;
 }
-
 .header-banner {
   width: 100%;
   height: auto;
   right: 0%;
   left: 0%;
-  background-color: #8d1a1a;
 
 }
-
-
+.barra{
+  display: inline;
+  justify-content: space-between;
+}
 @media screen and (max-width: 768px) {
-
   .header-banner {
     width: 100%;
 }
@@ -34,6 +24,8 @@
   flex-shrink: 0;
 }
 }
+
+
 /* Smartphones (portrait & landscape) */
 @media only screen 
 and (min-device-width : 320px) 
