@@ -5,6 +5,8 @@ import markerImageAgencia from "./img/agencias.svg";
 import markerImageAgentes from "./img/agentes.svg";
 import markerImageCajeros from "./img/cajeros.svg";
 import Search from "./buscador";
+import Geolocation from './ubicacion_usuario';
+
 
 //import AgentList from "./agentlist";
 
@@ -58,6 +60,7 @@ const MIBANCO_API_URL = './agencias.json';
         />
       </div>
 <Search />
+
     </>
   );
 }
