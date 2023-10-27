@@ -51,7 +51,7 @@ function App() {
       <Mapa />
       <BannerApp />
       <Contactanos />
-      <Siguenos />
+      {/* <Siguenos /> */}
       {/* <Agencias /> */}
     </>
   );

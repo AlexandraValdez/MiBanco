@@ -1,7 +1,11 @@
-#root {
-  max-width: 1280px;
-  /* margin: 0 auto; */
-  text-align: center;
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+    
 }
 
 p {
@@ -96,10 +100,56 @@ p {
   color: #4a4a4a;
 }
 
+/* Banner app */
+.banner-all {
+  margin-top: 36px;
+  margin-bottom: 36px;
+}
+
+.web-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 41px;
+}
+
+.web-cel-container {
+  width: 900px;
+  height: 615px;
+}
+
+.texto-banner {
+  color: #4a4a4a;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.texto2-banner {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* contactanos  */
+
+.btn-contact {
+  width: 252px;
+  height: 43px;
+  border-radius: 18.5px;
+  border: 1px solid var(--Textos-2, #bababa);
+}
+
 /* media query buscador */
 
 @media (max-width: 425px) {
   .text-content {
+    display: none;
+  }
+  .web-banner,
+  .web-cel,
+  .web-cel-container,
+  .llamanos {
     display: none;
   }
 }
@@ -114,5 +164,31 @@ p {
     margin-top: 64px;
     padding-right: 0px;
   }
-}
 
+  .celularBanner {
+    display: none;
+  }
+
+  .cel {
+    display: none;
+  }
+
+  .contactanos-container {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .llamanos{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .social-media{
+    margin-left: 46px;
+  }
+
+  .contactanos-texto{
+    width: 250px;
+    text-align: left;
+  }
+}
