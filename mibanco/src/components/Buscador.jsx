@@ -28,7 +28,7 @@ const Buscador = () => {
     fetch(MIBANCO_API_URLAgentes)
       .then(response => response.json())
       .then(dataAgentes => {
-        setAgentes(dataAgentes.data); console.log("aquiii: ", dataAgentes.data)
+        setAgentes(dataAgentes.data); console.log("agente", dataAgentes.data)
       })
       .catch(error => console.error('Error:', error));
 
@@ -40,23 +40,33 @@ const Buscador = () => {
 
 
   const handleSearch = (event) => {
-    const searchTerm = event.target.value;
+    const searchTerm = event.target.value.toLowerCase();
     setSearchTerm(searchTerm);
 
-    // Comprobar si agencias se ha cargado correctamente antes de filtrar
-    if (!agencias) {
-      return;
+    let results = [];
+
+    // Filtrar agencias
+    if (agencias) {
+      results = results.concat(agencias.filter((agencia) => {
+        return (
+          agencia.DISTRITO &&
+          agencia.DISTRITO.toLowerCase().includes(searchTerm)
+        );
+      }));
     }
 
-    // Filtrar los resultados que coinciden con el término de búsqueda en el campo "distrito"
-    const results = agencias.filter((agencia) => {
-      return (
-        agencia.DISTRITO &&
-        agencia.DISTRITO.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    });
+    // Filtrar agentes (este es un ejemplo genérico, ya que no proporcionaste la estructura exacta de "agentes")
+    if (agentes) {
+      results = results.concat(agentes.filter((agente) => {
+        return (
+          agente.NOMBRE &&
+          agente.DIRECCION.toLowerCase().includes(searchTerm)
+        );
+      }));
+    }
 
     setSearchResults(results);
+    console.log("aquiiii", setSearchResults)
   };
 
   // const handleSvgColorChange = () => {
@@ -86,7 +96,7 @@ const Buscador = () => {
           Agencias
         </div>
         <div className={category === 'agentes' ? 'selected' : '' + " filtro-categoria filtro-agentes"} onClick={() => setCategory("agentes")}>
-          <img src={Agentes} className="pe-1"></img>
+          <img src={Agentes} className="pe-1" alt="Agentes" />
           Agentes
         </div>
         <div className={category === 'cajeros' ? 'selected' : '' + " filtro-categoria filtro-cajeros"} onClick={() => setCategory("cajeros")}>
@@ -99,12 +109,31 @@ const Buscador = () => {
       <div className="search-results">
         <ul>
           {searchResults.length > 0 ? (
-            searchResults.map((result, index) => (
-              <li key={index}>
-                <p>Distrito: {result.DISTRITO}</p>
-                <p>Dirección: {result.DIRECCION}</p>
-              </li>
-            ))
+            searchResults.map((result, index) => {
+              // Renderizado para Agencias
+              if (category === "agencias") {
+                return (
+                  <li key={index}>
+                    <p>Distrito: {result.DISTRITO}</p>
+                    <p>Dirección: {result.DIRECCION}</p>
+                  </li>
+                );
+              }
+
+              // Renderizado para Agentes (ADAPTAR según la estructura real de "agentes")
+              if (category === "agentes") {
+                return (
+                  <li key={index}>
+                    {/* <p>Nombre: {result.NOMBRE}</p> CAMBIAR si el campo es diferente */}
+                    <p>Dirección: {result.DIRECCION}</p> {/* CAMBIAR si el campo es diferente */}
+                  </li>
+                );
+              }
+
+              // Si se añade la funcionalidad de cajeros, puedes agregar un bloque similar aquí
+
+              return null; // Para otras categorías no especificadas o en caso de que no coincida con las anteriores
+            })
           ) : (
             <li>No se encontraron resultados</li>
           )}
