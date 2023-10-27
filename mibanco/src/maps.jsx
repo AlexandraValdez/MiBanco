@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import GoogleMapReact from "google-map-react";
 import markerImageAgencia from "./img/agencias.svg";
 import markerImageAgentes from "./img/agentes.svg";
+import markerImageCajeros from "./img/cajeros.svg";
 
 //https://ubicatuagente.agentekasnet.com/ubicatuagente/Home/AgenteUbiGet?q=-11.896579686970234%26-77.04242582549773
 
-const CustomMarker = ({ imageSrc }) => (
+let CustomMarker = ({ imageSrc }) => (
   <div style={{ width: "30px", height: "30px" }}>
     <img
       src={imageSrc}
@@ -15,7 +16,7 @@ const CustomMarker = ({ imageSrc }) => (
   </div>
 );
 
-function Maps({ lat, lng, markersAgentes, markersAgencias }) {
+function Maps({ markersAgentes, markersAgencias, markersCajeros }) {
   const [latitud, setLatitud] = useState(null);
   const [longitud, setLongitud] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -24,14 +25,14 @@ function Maps({ lat, lng, markersAgentes, markersAgencias }) {
     // Comprobar si el navegador admite la API de geolocalización
     if ("geolocation" in navigator) {
       // Obtener la ubicación del usuario
-      navigator.geolocation.getCurrentPosition(
+      navigator.geolocation.watchPosition(
         function (position) {
           const latitude = position.coords.latitude;
           const longitude = position.coords.longitude;
 
-          // Haz algo con la latitud y longitud, como mostrarla en la página
-          console.log("Latitud: " + latitude);
-          console.log("Longitud: " + longitude);
+          // latitud y longitud
+          // console.log("Latitud: " + latitude);
+          // console.log("Longitud: " + longitude);
 
           // Actualiza los estados con las coordenadas
           setLatitud(latitude);
@@ -53,8 +54,8 @@ function Maps({ lat, lng, markersAgentes, markersAgencias }) {
 
   const defaultProps = {
     center: {
-      lat: latitud, // Usa latitud obtenida o lat por defecto -33.4102528
-      lng: longitud , // Usa longitud obtenida o lng por defecto -70.5789952
+      lat: latitud, // Usa latitud obtenida  -33.4102528
+      lng: longitud, // Usa longitud obtenida  -70.5789952
     },
     zoom: 16,
   };
@@ -72,20 +73,31 @@ function Maps({ lat, lng, markersAgentes, markersAgencias }) {
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
       >
-        {markersAgencias.map((marker, index) => (
+        {markersAgencias.map((markerA, indexA) => (
           <CustomMarker
-            key={index}
-            lat={marker.lat}
-            lng={marker.lng}
-            imageSrc={marker.image}
+            key={indexA}
+            lat={markerA.lat}
+            lng={markerA.lng}
+            imageSrc={markerImageAgencia}
           />
         ))}
-        {markersAgentes.map((marker, index) => (
+
+        {markersAgentes.map((markerAg, index) => (
+          
           <CustomMarker
             key={index}
-            lat={marker.lat}
-            lng={marker.lng}
+            lat={(markerAg.lat)}
+            lng={(markerAg.lng)}
             imageSrc={markerImageAgentes}
+          />
+        ))}
+        {markersCajeros.map((markerCaj, indexCaj) => (
+          
+          <CustomMarker
+            key={indexCaj}
+            lat={(markerCaj.lat)}
+            lng={(markerCaj.lng)}
+            imageSrc={markerImageCajeros}
           />
         ))}
       </GoogleMapReact>
