@@ -22,56 +22,56 @@ function Maps({ markersAgentes, markersAgencias, markersCajeros }) {
   const [longitud, setLongitud] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    // Comprobar si el navegador admite la API de geolocalización
-    if ("geolocation" in navigator) {
-      // Obtener la ubicación del usuario
-      navigator.geolocation.watchPosition(
-        function (position) {
-          const latitude = position.coords.latitude;
-          const longitude = position.coords.longitude;
+  // useEffect(() => {
+  //   // Comprobar si el navegador admite la API de geolocalización
+  //   if ("geolocation" in navigator) {
+  //     // Obtener la ubicación del usuario
+  //     navigator.geolocation.watchPosition(
+  //       function (position) {
+  //         const latitude = position.coords.latitude;
+  //         const longitude = position.coords.longitude;
 
-          // latitud y longitud
-          // console.log("Latitud: " + latitude);
-          // console.log("Longitud: " + longitude);
+  //         // latitud y longitud
+  //         // console.log("Latitud: " + latitude);
+  //         // console.log("Longitud: " + longitude);
 
-          // Actualiza los estados con las coordenadas
-          setLatitud(latitude);
-          setLongitud(longitude);
-          setLoading(false); // Establecer el estado de carga en falso cuando se obtienen las coordenadas
-        },
-        function (error) {
-          // En caso de error al obtener la ubicación
-          console.error("Error al obtener la ubicación: " + error.message);
-          setLoading(false); // Establecer el estado de carga en falso en caso de error
-        }
-      );
-    } else {
-      // El navegador no admite la API de geolocalización
-      console.error("El navegador no admite la geolocalización.");
-      setLoading(false); // Establecer el estado de carga en falso en caso de falta de soporte
-    }
-  }, []);
+  //         // Actualiza los estados con las coordenadas
+  //         setLatitud(latitude);
+  //         setLongitud(longitude);
+  //         setLoading(false); // Establecer el estado de carga en falso cuando se obtienen las coordenadas
+  //       },
+  //       function (error) {
+  //         // En caso de error al obtener la ubicación
+  //         console.error("Error al obtener la ubicación: " + error.message);
+  //         setLoading(false); // Establecer el estado de carga en falso en caso de error
+  //       }
+  //     );
+  //   } else {
+  //     // El navegador no admite la API de geolocalización
+  //     console.error("El navegador no admite la geolocalización.");
+  //     setLoading(false); // Establecer el estado de carga en falso en caso de falta de soporte
+  //   }
+  // }, []);
 
   // const latFija = -12.030362;
   // const lngFija = -77.029317;
-  // const latFija = -8.819135133;
-  // const lngFija = -77.460973087;
+  const latFija = -8.819135133;
+  const lngFija = -77.460973087;
 
 
   const defaultProps = {
     center: {
-      lat: latitud, // Usa latitud obtenida  -33.4102528
-      lng: longitud, // Usa longitud obtenida  -70.5789952
-    //  lat: latFija, 
-    //   lng: lngFija
+      // lat: latitud, // Usa latitud obtenida  -33.4102528
+      // lng: longitud, // Usa longitud obtenida  -70.5789952
+     lat: latFija, 
+      lng: lngFija
     },
     zoom: 16,
   };
 
-  if (loading) {
-    return <div>Cargando...</div>;
-  }
+  // if (loading) {
+  //   return <div>Cargando...</div>;
+  // }
 
   return (
     <div style={{ height: "50vh", width: "100%" }}>

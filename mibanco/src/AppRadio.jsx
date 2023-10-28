@@ -1,22 +1,23 @@
-import React, { useState, useEffect } from "react";
-import GoogleMapReact from "./maps";
-import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
-
-import markerImageAgencia from "./img/agencias.svg";
-import markerImageAgentes from "./img/agentes.svg";
-import markerImageCajeros from "./img/cajeros.svg";
-import "./App.css";
-import Buscador from "./components/Buscador";
-import BannerApp from "./components/BannerApp";
-import Contactanos from "./components/Contactanos";
-import Siguenos from "./components/Siguenos";
-import Carousel from "./components/carrusel";
 import Footer from "./components/footerfuncion";
 import Header from "./components/Header";
 import WazeLink from "./waze";
-import { calcularDistancia } from "./calcula_distancia";
 
-function App() {
+// Función para calcular la distancia haversine entre dos puntos geográficos
+function calcularDistancia(lat1, lon1, lat2, lon2) {
+  const radioTierra = 6371; // Radio de la Tierra en kilómetros
+  const dLat = (lat2 - lat1) * (Math.PI / 180);
+  const dLon = (lon2 - lon1) * (Math.PI / 180);
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(lat1 * (Math.PI / 180)) *
+      Math.cos(lat2 * (Math.PI / 180)) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  const distancia = radioTierra * c;
+  return distancia;
+}
+function AppProximidad() {
   const [markersAgencias, setMarkersAgencias] = useState([]);
   const [markersAgentes, setMarkersAgentes] = useState([]);
   const [markersCajeros, setMarkersCajeros] = useState([]);
@@ -35,10 +36,10 @@ function App() {
 
   useEffect(() => {
     //######################################################33
-    // Comprobar si el navegador admite la API de geolocalización
+    // // Comprobar si el navegador admite la API de geolocalización
     // if ("geolocation" in navigator) {
     //   // Obtener la ubicación del usuario
-    //   navigator.geolocation.getCurrentPosition(
+    //   navigator.geolocation.watchPosition(
     //     function (position) {
     //       const latitudRef = position.coords.latitude;
     //       const longitudRef = position.coords.longitude;
@@ -52,13 +53,11 @@ function App() {
     //       setLongitudRef(longitudRef);
     //       setLoading(false); // Establecer el estado de carga en falso cuando se obtienen las coordenadas
     //     },
-
     //     function (error) {
     //       // En caso de error al obtener la ubicación
     //       console.error("Error al obtener la ubicación: " + error.message);
     //       setLoading(false); // Establecer el estado de carga en falso en caso de error
     //     }
-
     //   );
     // } else {
     //   // El navegador no admite la API de geolocalización
@@ -68,12 +67,9 @@ function App() {
     //#####################################
     // "X_LONGITUD": -77.029317,
     // "Y_LATITUD": -12.030362
+    const latFija = -12.030362;
+    const lngFija = -77.029317;
 
-    // lat -8.819135133
-    // lng  -77.460973087
-
-    const latitudRef = -8.819135133;
-    const longitudRef = -77.460973087;
 
     // Crear una matriz de promesas para todas las solicitudes fetch
     const fetchPromises = [
@@ -101,7 +97,6 @@ function App() {
             lng: parseFloat(item.X_LONGITUD),
             image: markerImageAgencia,
           }));
-        //   console.log('Agencia',marcadoresMibanco);
 
         // Filtrar elementos nulos, indefinidos y no numéricos en marcadores de Kasnet
         const marcadoresKasnet = dataKasnet
@@ -133,7 +128,7 @@ function App() {
             image: markerImageCajeros,
           }));
         // Distancia máxima en kilómetros
-        const distanciaMaxima = 20;
+        const distanciaMaxima = 40;
 
         // Filtrar marcadores cercanos para cada tipo
         const marcadoresCercanosMibanco = marcadoresMibanco.filter(
@@ -182,9 +177,6 @@ function App() {
       })
       .catch((error) => console.error("Error:", error));
   }, []);
-
-  console.log("markersAgencias", markersAgencias);
-
   const markersAgenciasFijo = [
     { lat: -12.05, lng: -77.002, image: markerImageAgencia },
     // Agrega más marcadores aquí
@@ -194,8 +186,8 @@ function App() {
     <>
       <div className="App">
         <GoogleMapReact
-          // lat={-12.048099}
-          // lng={-77.000444}
+          lat={-12.048099}
+          lng={-77.000444}
           markersAgentes={markersAgentes}
           markersAgencias={markersAgencias}
           markersCajeros={markersCajeros}
@@ -206,4 +198,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppProximidad;
