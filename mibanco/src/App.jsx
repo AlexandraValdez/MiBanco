@@ -192,6 +192,7 @@ function App() {
 
   return (
     <>
+        < Header />
       <div className="App">
         <Buscador />
         <GoogleMapReact
@@ -203,6 +204,11 @@ function App() {
         />
         <WazeLink />
       </div>
+      <BannerApp />
+      <Carousel />
+      <Contactanos />
+      <Siguenos />
+    <Footer />
     </>
   );
 }

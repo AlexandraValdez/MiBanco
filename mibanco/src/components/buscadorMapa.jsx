@@ -3,6 +3,7 @@ import Agencias from "../assets/Agencias.svg";
 import Agentes from "../assets/Agentes.svg";
 import Cajeros from "../assets/Cajeros.svg";
 import { calcularDistancia } from "../calcula_distancia";
+import '../styles/buscador.css';
 
 const Buscador = () => {
   const [category, setCategory] = useState("agencias"); // Establece "agencias" como valor inicial
@@ -78,53 +79,53 @@ const Buscador = () => {
             direccion: item.Direccion,
           }));
 
- // Distancia máxima en kilómetros
- const distanciaMaxima = 2;
+        // Distancia máxima en kilómetros
+        const distanciaMaxima = 2;
 
- // Filtrar marcadores cercanos para cada tipo
- const agenciasCercanasMibanco = agenciasMibanco.filter(
-   (marcador) => {
-     const distancia = calcularDistancia(
-       // lugarReferencia.lat,
-       // lugarReferencia.lng,
-       latitudRef,
-       longitudRef,
-       marcador.lat,
-       marcador.lng
-     );
-     return distancia <= distanciaMaxima;
-   }
- );
+        // Filtrar marcadores cercanos para cada tipo
+        const agenciasCercanasMibanco = agenciasMibanco.filter(
+          (marcador) => {
+            const distancia = calcularDistancia(
+              // lugarReferencia.lat,
+              // lugarReferencia.lng,
+              latitudRef,
+              longitudRef,
+              marcador.lat,
+              marcador.lng
+            );
+            return distancia <= distanciaMaxima;
+          }
+        );
 
- const agentesCercanosKasnet = agentesKasnet.filter((marcador) => {
-   const distancia = calcularDistancia(
-     // lugarReferencia.lat,
-     // lugarReferencia.lng,
-     latitudRef,
-     longitudRef,
-     marcador.lat,
-     marcador.lng
-   );
-   return distancia <= distanciaMaxima;
- });
+        const agentesCercanosKasnet = agentesKasnet.filter((marcador) => {
+          const distancia = calcularDistancia(
+            // lugarReferencia.lat,
+            // lugarReferencia.lng,
+            latitudRef,
+            longitudRef,
+            marcador.lat,
+            marcador.lng
+          );
+          return distancia <= distanciaMaxima;
+        });
 
- const cajerosCercanosBcp = cajerosBcp.filter((marcador) => {
-   const distancia = calcularDistancia(
-     // lugarReferencia.lat,
-     // lugarReferencia.lng,
-     latitudRef,
-     longitudRef,
+        const cajerosCercanosBcp = cajerosBcp.filter((marcador) => {
+          const distancia = calcularDistancia(
+            // lugarReferencia.lat,
+            // lugarReferencia.lng,
+            latitudRef,
+            longitudRef,
 
-     marcador.lat,
-     marcador.lng
-   );
-   return distancia <= distanciaMaxima;
- });
+            marcador.lat,
+            marcador.lng
+          );
+          return distancia <= distanciaMaxima;
+        });
 
- // Configurar los estados una vez que todos los datos estén disponibles
- setAgencias(agenciasCercanasMibanco);
- setAgentes(agentesCercanosKasnet);
- setCajeros(cajerosCercanosBcp);
+        // Configurar los estados una vez que todos los datos estén disponibles
+        setAgencias(agenciasCercanasMibanco);
+        setAgentes(agentesCercanosKasnet);
+        setCajeros(cajerosCercanosBcp);
 
       })
       .catch((error) => console.error("Error:", error));
@@ -134,7 +135,7 @@ const Buscador = () => {
     const searchTerm = event.target.value;
     setSearchTerm(searchTerm);
 
-  if (!agencias) {
+    if (!agencias) {
       return;
     }
 
@@ -156,7 +157,7 @@ const Buscador = () => {
         cajero.distrito.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
-  
+
     setSearchResults(results);
   };
 
@@ -187,10 +188,8 @@ const Buscador = () => {
           <span className="texto-filtro">Todo</span>
           <div className="raya-filtro"></div>
         </div>
-        <div className={category === 'agencias' ? 'selected' : '' + " filtro-categoria filtro-agencias"} onClick={() => setCategory("agencias") }>
+        <div className={category === 'agencias' ? 'selected' : '' + " filtro-categoria filtro-agencias"} onClick={() => setCategory("agencias")}>
           <img src={Agencias} className="pe-1" /*style={{ fill: svgColor }}*/ alt="Agencias" />
-          
-          {/* <div className={`filtro-categoria ${category === "agencias" ? "selected" : "" + " filtro-categoria filtro-agencias"}`} onClick={() => setCategory("agencias")}> */}
 
           Agencias
         </div>

@@ -51,7 +51,7 @@ const [loading, setLoading] = useState(true);
 
   return (
     <div>
-      <button onClick={handleOpenWaze}>Abrir Waze</button>
+      <button onClick={handleOpenWaze}>Waze</button>
     </div>
   );
 }
