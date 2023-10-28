@@ -6,7 +6,7 @@ import markerImageAgencia from "./img/agencias.svg";
 import markerImageAgentes from "./img/agentes.svg";
 import markerImageCajeros from "./img/cajeros.svg";
 import "./App.css";
-import Buscador from "./components/Buscador";
+import Buscador from "./components/buscadorMapa";
 import BannerApp from "./components/BannerApp";
 import Contactanos from "./components/Contactanos";
 import Siguenos from "./components/Siguenos";
@@ -72,8 +72,8 @@ function App() {
     // lat -8.819135133
     // lng  -77.460973087
 
-    const latitudRef = -8.819135133;
-    const longitudRef = -77.460973087;
+    const latitudRef =  -12.063285;
+    const longitudRef =  -77.097447;
 
     // Crear una matriz de promesas para todas las solicitudes fetch
     const fetchPromises = [
@@ -133,7 +133,7 @@ function App() {
             image: markerImageCajeros,
           }));
         // Distancia máxima en kilómetros
-        const distanciaMaxima = 20;
+        const distanciaMaxima = 2
 
         // Filtrar marcadores cercanos para cada tipo
         const marcadoresCercanosMibanco = marcadoresMibanco.filter(
@@ -183,7 +183,7 @@ function App() {
       .catch((error) => console.error("Error:", error));
   }, []);
 
-  console.log("markersAgencias", markersAgencias);
+  //console.log("markersAgencias", markersAgencias);
 
   const markersAgenciasFijo = [
     { lat: -12.05, lng: -77.002, image: markerImageAgencia },
@@ -193,6 +193,7 @@ function App() {
   return (
     <>
       <div className="App">
+        <Buscador />
         <GoogleMapReact
           // lat={-12.048099}
           // lng={-77.000444}

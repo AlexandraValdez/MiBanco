@@ -17,7 +17,7 @@ let CustomMarker = ({ imageSrc }) => (
 );
 
 function Maps({ markersAgentes, markersAgencias, markersCajeros }) {
-  console.log('Agencia-maps',markersAgencias);
+  //console.log('Agencia-maps',markersAgencias);
   const [latitud, setLatitud] = useState(null);
   const [longitud, setLongitud] = useState(null);
   const [loading, setLoading] = useState(true);
