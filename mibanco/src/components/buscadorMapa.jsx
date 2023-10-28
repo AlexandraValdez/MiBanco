@@ -134,9 +134,7 @@ const Buscador = () => {
     const searchTerm = event.target.value;
     setSearchTerm(searchTerm);
 
- 
-
-    if (!agencias) {
+  if (!agencias) {
       return;
     }
 
