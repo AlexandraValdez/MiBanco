@@ -3,7 +3,7 @@ import Agencias from "../assets/Agencias.svg";
 import Agentes from "../assets/Agentes.svg";
 import Cajeros from "../assets/Cajeros.svg";
 import { calcularDistancia } from "../calcula_distancia";
-import '../styles/buscador.css';
+import '../styles/buscadorMapa.css';
 
 const Buscador = () => {
   const [category, setCategory] = useState("agencias"); // Establece "agencias" como valor inicial
@@ -169,7 +169,7 @@ const Buscador = () => {
           type="text"
           value={searchTerm}
           onChange={handleSearch}
-          placeholder="Ingresa la calle o distrito"
+          placeholder="Ingresa el distrito"
           className="input-buscador"
           autoComplete="off"
         ></input>

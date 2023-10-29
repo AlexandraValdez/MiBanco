@@ -3,13 +3,14 @@ import React from 'react';
 import { Navbar, Nav, Button } from 'react-bootstrap';
 import logotipo from '../img/logotipo.png';
 import banner from '../img/banner.png'; 
-import './Header.css'; 
+import '../styles/header.css'; 
 
 const Header = () => {
   return (
     <div id='container' className="header-container" >
     <div><img src={banner} alt="Banner" className="header-banner" /></div>
-    <div className='barra'><Navbar bg="#FFFFFF" variant="light" expand="lg">
+    <div className='barra'>
+      <Navbar bg="#FFFFFF" variant="light" expand="lg">
       <Navbar.Brand href="#">
         <img alt="Logo"  src={logotipo} width="250" height="160" className="d-inline-block align-top" />
       </Navbar.Brand>
@@ -18,8 +19,8 @@ const Header = () => {
         <Button variant="primary" id='btn2' style={{ color: '#FAB500', width: '150px', height: '40px' }}>Ahorra</Button>
       </Nav>
       <Navbar.Toggle aria-controls="navbar-menu" />
-      <Navbar.Collapse id="navbar-menu">
-        <Nav>
+      <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
           <Nav.Link href="#">Contactanos</Nav.Link>
           <Nav.Link href="#">Pide tu prestamo</Nav.Link>
         </Nav>

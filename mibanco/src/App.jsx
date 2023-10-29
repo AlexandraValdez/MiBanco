@@ -10,7 +10,8 @@ import Buscador from "./components/buscadorMapa";
 import BannerApp from "./components/BannerApp";
 import Contactanos from "./components/Contactanos";
 import Siguenos from "./components/Siguenos";
-import Carousel from "./components/carrusel";
+import Carrusel from "./components/carrusel";
+
 import Footer from "./components/footerfuncion";
 import Header from "./components/Header";
 import WazeLink from "./waze";
@@ -72,8 +73,8 @@ function App() {
     // lat -8.819135133
     // lng  -77.460973087
 
-    const latitudRef =  -12.063285;
-    const longitudRef =  -77.097447;
+    const latitudRef = -12.063285;
+    const longitudRef = -77.097447;
 
     // Crear una matriz de promesas para todas las solicitudes fetch
     const fetchPromises = [
@@ -192,23 +193,29 @@ function App() {
 
   return (
     <>
-        < Header />
+
       <div className="App">
+
+        <Header />
         <Buscador />
-        <GoogleMapReact
-          // lat={-12.048099}
-          // lng={-77.000444}
-          markersAgentes={markersAgentes}
-          markersAgencias={markersAgencias}
-          markersCajeros={markersCajeros}
-        />
-        <WazeLink />
+        <div className="google-map-container">
+          <GoogleMapReact
+            markersAgentes={markersAgentes}
+            markersAgencias={markersAgencias}
+            markersCajeros={markersCajeros}
+          />
+                 <WazeLink />
+        <BannerApp />
+        <Carrusel />
+        <Contactanos />
+        <Siguenos />
+
+
+<Footer />
+        </div>
+ 
+
       </div>
-      <BannerApp />
-      <Carousel />
-      <Contactanos />
-      <Siguenos />
-    <Footer />
     </>
   );
 }

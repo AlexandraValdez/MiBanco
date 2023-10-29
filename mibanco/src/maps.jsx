@@ -55,16 +55,16 @@ function Maps({ markersAgentes, markersAgencias, markersCajeros }) {
 
   // const latFija = -12.030362;
   // const lngFija = -77.029317;
-  // const latFija = -8.819135133;
-  // const lngFija = -77.460973087;
+  const latFija = -12.063285;
+  const lngFija =  -77.097447;
 
 
   const defaultProps = {
     center: {
-      lat: latitud, // Usa latitud obtenida  -33.4102528
-      lng: longitud, // Usa longitud obtenida  -70.5789952
-    //  lat: latFija, 
-    //   lng: lngFija
+    //  lat: latitud, // Usa latitud obtenida  -33.4102528
+   //   lng: longitud, // Usa longitud obtenida  -70.5789952
+      lat: latFija, 
+       lng: lngFija
     },
     zoom: 16,
   };

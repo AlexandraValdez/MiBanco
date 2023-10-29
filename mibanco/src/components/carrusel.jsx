@@ -1,6 +1,9 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useRef } from 'react';
+import '../styles/carrusel.css';
+
+
 
 // eslint-disable-next-line react/prop-types
 const CarouselItem = ({ image, altText, title, info }) => (
@@ -20,10 +23,10 @@ const CarouselItem = ({ image, altText, title, info }) => (
 );
 
 
-const Carousel = () => {
+const Carrusel = () => {
     const slides = [
         {
-            image: "./src/img/cajero.png",
+            image: '/src/img/cajeros.png',
             altText: "Cajero",
             title: "Agencias",
             info: [
@@ -33,7 +36,7 @@ const Carousel = () => {
             ]
         },
         {
-            image: "./src/img/kasnet.png",
+            image: '/src/img/kasnet.png',
             altText: "Kasnet",
             title: "Agentes BCP y Kasnet",
             info: [
@@ -44,7 +47,7 @@ const Carousel = () => {
             ]
         },
         {
-            image: "./src/img/BCP.png",
+            image: '/src/img/BCP.png',
             altText: "BCP",
             title: "Cajeros BCP",
             info: [
@@ -114,4 +117,6 @@ const Carousel = () => {
     );
 };
 
-export default Carousel;
+export default Carrusel;
+
+
