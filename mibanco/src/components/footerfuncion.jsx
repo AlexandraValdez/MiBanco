@@ -1,6 +1,10 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import '../styles/footer.css';
+import hablemos from "../img/hablemosMásSiempre.png";
+import libro from "../img/libroReclamaciones.png";
+import denuncias from "../img/denuncias.png";
+import logoBlanco from "../img/mibanco-LogoBlanco.png";
 
 import '../styles/footer.css';
 
@@ -70,18 +74,18 @@ const Footer = () => {
 
       <div className="logos-container">
         <button className="logo-item" onClick={() => handleLinkClick('URL_DEL_LOGO_1')}>
-          <img src="./src/img/hablemosMásSiempre.png" alt="Hablamos más siempre" />
+          <img src={hablemos} alt="Hablamos más siempre" />
         </button>
         <button className="logo-item" onClick={() => handleLinkClick('URL_DEL_LOGO_2')}>
-          <img src="./src/img/libroReclamaciones.png" alt="Libro de Reclamaciones" />
+          <img src={libro} alt="Libro de Reclamaciones" />
         </button>
         <button className="logo-item" onClick={() => handleLinkClick('URL_DEL_LOGO_3')}>
-          <img src="./src/img/denuncias.png" alt="Sistema de Denuncias" />
+          <img src={denuncias} alt="Sistema de Denuncias" />
         </button>
       </div>
 
       <div className="banner-footer">
-        <img src="./src/img/mibanco-LogoBlanco.png" alt="MiBancoLogo" className="banner-logo" />
+        <img src={logoBlanco} alt="MiBancoLogo" className="banner-logo" />
         <div className="banner-text">
           <p>BANCO DE LA MICROEMPRESA S.A.</p>
           <p>RUC 20382036655</p>
