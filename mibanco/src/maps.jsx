@@ -55,8 +55,11 @@ function Maps({ markersAgentes, markersAgencias, markersCajeros }) {
 
   // const latFija = -12.030362;
   // const lngFija = -77.029317;
-  const latFija = -12.063285;
-  const lngFija =  -77.097447;
+  const latFija = -12.115437;
+  const lngFija =  -77.018681;
+  //-12.115437, -77.018681
+
+
 
 
   const defaultProps = {

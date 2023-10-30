@@ -73,8 +73,9 @@ function App() {
     // lat -8.819135133
     // lng  -77.460973087
 
-    const latitudRef = -12.063285;
-    const longitudRef = -77.097447;
+
+    const latitudRef = -12.115437;
+    const longitudRef = -77.018681;
 
     // Crear una matriz de promesas para todas las solicitudes fetch
     const fetchPromises = [
