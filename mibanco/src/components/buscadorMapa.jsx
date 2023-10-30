@@ -16,9 +16,9 @@ const Buscador = () => {
   const [longitudRef, setLongitudRef] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const BCP_API_URL = "./bcp_api.json";
-  const KASNET_API_URL = "./agentes.json";
-  const MIBANCO_API_URL = "./agencias.json";
+  const BCP_API_URL = "/public/bcp_api.json";
+  const KASNET_API_URL = "/public/agentes.json";
+  const MIBANCO_API_URL = "/public/agencias.json";
 
   useEffect(() => {
     const latitudRef = -12.115437;
