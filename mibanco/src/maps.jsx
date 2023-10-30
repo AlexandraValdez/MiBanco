@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
 import GoogleMapReact from "google-map-react";
 import markerImageAgencia from "./img/agencias.svg";
@@ -94,7 +92,7 @@ function Maps({ markersAgentes, markersAgencias, markersCajeros }) {
         ))}
 
         {markersAgentes.map((markerAg, index) => (
-
+          
           <CustomMarker
             key={index}
             lat={(markerAg.lat)}
@@ -103,7 +101,7 @@ function Maps({ markersAgentes, markersAgencias, markersCajeros }) {
           />
         ))}
         {markersCajeros.map((markerCaj, indexCaj) => (
-
+          
           <CustomMarker
             key={indexCaj}
             lat={(markerCaj.lat)}

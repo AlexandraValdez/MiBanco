@@ -12,11 +12,8 @@ const Buscador = () => {
   const [agencias, setAgencias] = useState([]); // Estado para almacenar las agencias
   const [agentes, setAgentes] = useState([]);
   const [cajeros, setCajeros] = useState([]);
-  // eslint-disable-next-line no-unused-vars
   const [latitudRef, setLatitudRef] = useState(null);
-  // eslint-disable-next-line no-unused-vars
   const [longitudRef, setLongitudRef] = useState(null);
-  // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(true);
 
   const BCP_API_URL = "./bcp_api.json";

@@ -1,133 +1,45 @@
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Poppins;
-
-}
-
-
-
-#btn1 {
-  background-color: #FAB500;
-  border-radius: 28px;
-  border-color: #FAB500;
-  font-family: Poppins;
-  margin: 0;
-  box-sizing: border-box;
-
-}
-
-#btn2 {
-  background-color: #FFFFFF;
-  border-radius: 28px;
-  border-color: #FAB500;
-}
-
-#container {
-  background: conic-gradient(from .5turn at center left, rgb(107, 190, 173), rgb(174, 241, 241));
-  height: 60px;
-  width: 100%;
-
-}
-
-@keyframes adjust-header {
-  to {
-    font-size: 40px;
-    height: 240px;
-  }
-}
-
-
-@media (min-width: 780px) {
-  .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #009640;
-    /* color verde según la imagen */
-    font-family: 'Arial', sans-serif;
-  }
-
-  .footer-btn {
-    background: none;
-    border: none;
-    outline: none;
-    padding: 10px;
-    text-align: left;
-    cursor: pointer;
-    color: white;
-    transition: background-color 0.3s;
-    font-family: poppins;
-  }
-
-  .footer-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    /* blanco semi-transparente para un efecto al pasar el ratón sobre un fondo verde */
-  }
-
-  .arrow {
-    display: inline-block;
-    margin-left: 10px;
-    width: 10px;
-    height: 10px;
-    border-right: 2px solid white;
-    border-bottom: 2px solid white;
-    transform: rotate(45deg);
-    transition: 0.3s transform;
-  }
-
-  .footer-btn.active .arrow {
-    transform: rotate(225deg);
-  }
-
-  .logos-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .logo-item img {
-    max-width: 50px;
-    /* o el tamaño que prefieras */
-    height: auto;
-  }
-
-  .banner-footer {
-    display: flex;
-    align-items: center;
-  }
-
-  .banner-logo {
-    width: 70px;
-    /* ajustar según necesidad */
-    margin-right: 30px;
-  }
-
-  .banner-text {
-    display: flex;
-    flex-direction: column;
-    color: white;
-  }
-
-  .banner-text p {
     margin: 0;
-    font-size: 12px;
-    font-family: poppins;
-  }
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+    
+}
 
-  /* Puedes agregar un estilo para el contacto telefónico también */
-  .phone-contact {
-    color: white;
-    font-size: 18px;
-    font-family: poppins;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
 
+
+/* mapa */
+
+.container-fluid {
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  width: auto;
+  height: auto;
+}
+
+
+
+
+
+/* @media (min-width: 768px) {
+  .buscador-container {
+    width: 480px;
+    position: absolute;
+    border-radius: 12px;
+    height: 121px;
+    padding-left: 20px;
+    margin-top: 64px;
+    padding-right: 0px;
+  }
+} */
+
+
+
+
+.google-map-container {
+  margin-top: 90px; /* Ajusta el valor según la altura de tu encabezado */
+  height: calc(100vh - 60px); /* Resta la altura del encabezado al 100% de la altura de la ventana */
 }

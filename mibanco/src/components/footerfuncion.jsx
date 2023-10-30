@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import '../styles/footer.css';
 
+import '../styles/footer.css';
 
 const Footer = () => {
   const [activeButton, setActiveButton] = useState(null);
@@ -10,7 +11,7 @@ const Footer = () => {
     setActiveButton(activeButton === id ? null : id);
   };
 
-  const handleLogoClick = (url) => {
+  const handleLinkClick = (url) => {
     window.location.href = url;
   };
 
@@ -19,26 +20,62 @@ const Footer = () => {
       <button onClick={() => handleButtonClick(1)} className="footer-btn">
         Acerca de Mibanco <span className="arrow"></span>
       </button>
-      {activeButton === 1 && <div className="footer-content">Información sobre MiBanco...</div>}
+      {activeButton === 1 && (
+        <div className="footer-content">
+          <a onClick={() => handleLinkClick('URL_ENLACE_1')} style={{ cursor: 'pointer', textDecoration: 'none', color: 'inherit', display: 'block', padding: '5px 0' }}>
+            Firma Electronica
+          </a>
+          <a onClick={() => handleLinkClick('URL_ENLACE_2')} style={{ cursor: 'pointer', textDecoration: 'none', color: 'inherit', display: 'block', padding: '5px 0' }}>
+            Historial de la unión
+          </a>
+          <a onClick={() => handleLinkClick('URL_ENLACE_1')} style={{ cursor: 'pointer', textDecoration: 'none', color: 'inherit', display: 'block', padding: '5px 0' }}>
+            Edyficar Perú S.A
+          </a>
+        </div>
+      )}
 
       <button onClick={() => handleButtonClick(2)} className="footer-btn">
         Para tu negocio <span className="arrow"></span>
       </button>
-      {activeButton === 2 && <div className="footer-content">Información para tu negocio...</div>}
+      {activeButton === 2 && (
+        <div className="footer-content">
+          <a onClick={() => handleLinkClick('URL_ENLACE_1')} style={{ cursor: 'pointer', textDecoration: 'none', color: 'inherit', display: 'block', padding: '5px 0' }}>
+            Locales comerciales
+          </a>
+          <a onClick={() => handleLinkClick('URL_ENLACE_2')} style={{ cursor: 'pointer', textDecoration: 'none', color: 'inherit', display: 'block', padding: '5px 0' }}>
+            Ahorros negocios
+          </a>
+          <a onClick={() => handleLinkClick('URL_ENLACE_1')} style={{ cursor: 'pointer', textDecoration: 'none', color: 'inherit', display: 'block', padding: '5px 0' }}>
+            Seguro Negocio protegido
+          </a>
+        </div>
+      )}
 
       <button onClick={() => handleButtonClick(3)} className="footer-btn">
         Para ti <span className="arrow"></span>
       </button>
-      {activeButton === 3 && <div className="footer-content">Información para ti...</div>}
+      {activeButton === 3 && (
+        <div className="footer-content">
+          <a onClick={() => handleLinkClick('URL_ENLACE_1')} style={{ cursor: 'pointer', textDecoration: 'none', color: 'inherit', display: 'block', padding: '5px 0' }}>
+            Consumo personal
+          </a>
+          <a onClick={() => handleLinkClick('URL_ENLACE_2')} style={{ cursor: 'pointer', textDecoration: 'none', color: 'inherit', display: 'block', padding: '5px 0' }}>
+            Full Ahorro
+          </a>
+          <a onClick={() => handleLinkClick('URL_ENLACE_1')} style={{ cursor: 'pointer', textDecoration: 'none', color: 'inherit', display: 'block', padding: '5px 0' }}>
+            SOAT
+          </a>
+        </div>
+      )}
 
       <div className="logos-container">
-        <button className="logo-item" onClick={() => handleLogoClick('URL_DEL_LOGO_1')}>
+        <button className="logo-item" onClick={() => handleLinkClick('URL_DEL_LOGO_1')}>
           <img src="./src/img/hablemosMásSiempre.png" alt="Hablamos más siempre" />
         </button>
-        <button className="logo-item" onClick={() => handleLogoClick('URL_DEL_LOGO_2')}>
+        <button className="logo-item" onClick={() => handleLinkClick('URL_DEL_LOGO_2')}>
           <img src="./src/img/libroReclamaciones.png" alt="Libro de Reclamaciones" />
         </button>
-        <button className="logo-item" onClick={() => handleLogoClick('URL_DEL_LOGO_3')}>
+        <button className="logo-item" onClick={() => handleLinkClick('URL_DEL_LOGO_3')}>
           <img src="./src/img/denuncias.png" alt="Sistema de Denuncias" />
         </button>
       </div>
