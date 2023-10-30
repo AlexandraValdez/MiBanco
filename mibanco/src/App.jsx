@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import GoogleMapReact from "./maps";
-import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
+//import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 
 import markerImageAgencia from "./img/agencias.svg";
 import markerImageAgentes from "./img/agentes.svg";
@@ -14,7 +14,7 @@ import Carrusel from "./components/carrusel";
 
 import Footer from "./components/footerfuncion";
 import Header from "./components/Header";
-import WazeLink from "./waze";
+
 import { calcularDistancia } from "./calcula_distancia";
 
 function App() {
