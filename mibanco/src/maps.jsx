@@ -16,7 +16,7 @@ let CustomMarker = ({ imageSrc }) => (
   </div>
 );
 
-function Maps({ markersAgentes, markersAgencias, markersCajeros }) {
+function Maps({ setLatitudRef,setLongitudRef,markersAgentes, markersAgencias, markersCajeros }) {
   //console.log('Agencia-maps',markersAgencias);
   const [latitud, setLatitud] = useState(null);
   const [longitud, setLongitud] = useState(null);
@@ -84,6 +84,16 @@ function Maps({ markersAgentes, markersAgencias, markersCajeros }) {
         }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
+        onDragEnd = {(map)=>{
+          // nueva ubicacion
+          //center.lat center.lng
+          setLatitudRef(map.center.lat());
+          setLongitudRef(map.center.lng());
+        //  console.log(map.center.lat(),"end");
+        }}
+        // onDrag = {(map)=>{
+        //   console.log(map,"drag");
+        // }}
       >
         {markersAgencias.map((markerA, indexA) => (
           <CustomMarker

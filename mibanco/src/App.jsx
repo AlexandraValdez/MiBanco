@@ -21,8 +21,8 @@ function App() {
   const [markersAgencias, setMarkersAgencias] = useState([]);
   const [markersAgentes, setMarkersAgentes] = useState([]);
   const [markersCajeros, setMarkersCajeros] = useState([]);
-  const [latitudRef, setLatitudRef] = useState(null);
-  const [longitudRef, setLongitudRef] = useState(null);
+  const [latitudRef, setLatitudRef] = useState(-12.115437);
+  const [longitudRef, setLongitudRef] = useState(-77.018681);
   const [loading, setLoading] = useState(true);
   //   Agencia = Mibanco
   //  Agentes = kasnet
@@ -74,8 +74,8 @@ function App() {
     // lng  -77.460973087
 
 
-    const latitudRef = -12.115437;
-    const longitudRef = -77.018681;
+    // const latitudRef = -12.115437;
+    // const longitudRef = -77.018681;
 
     // Crear una matriz de promesas para todas las solicitudes fetch
     const fetchPromises = [
@@ -183,7 +183,7 @@ function App() {
         setMarkersCajeros(marcadoresCercanosBcp);
       })
       .catch((error) => console.error("Error:", error));
-  }, []);
+  }, [latitudRef, longitudRef]);
 
   //console.log("markersAgencias", markersAgencias);
 
@@ -204,6 +204,8 @@ function App() {
             markersAgentes={markersAgentes}
             markersAgencias={markersAgencias}
             markersCajeros={markersCajeros}
+            setLatitudRef={setLatitudRef}
+            setLongitudRef={setLongitudRef}
           />
                  {/* <WazeLink /> */}
         <BannerApp />

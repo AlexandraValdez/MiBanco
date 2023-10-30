@@ -13,6 +13,9 @@
   display: inline;
   justify-content: space-between;
 }
+.barra .navbar-nav {
+  flex-direction: row;
+}
 #btn1{
   background-color: #FAB500;
   border-radius: 28px;

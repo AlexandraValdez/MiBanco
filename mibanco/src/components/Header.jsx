@@ -15,9 +15,9 @@ const Header = () => {
         <img alt="Logo"  src={logotipo} width="250" height="160" className="d-inline-block align-top" />
       </Navbar.Brand>
       <Nav className="ml-auto">
-        <Button variant="primary" id='btn1' style={{ color: '#FFFFFF', width: '150px', height: '40px' }}>Banco</Button>
-        <Button variant="primary" id='btn2' style={{ color: '#FAB500', width: '150px', height: '40px' }}>Ahorra</Button>
-      </Nav>
+      <Button variant="primary" id='btn1' style={{ color: '#FFFFFF', width: '100px', height: '40px' }}>Banco</Button>
+            <Button variant="primary" id='btn2' style={{ color: '#FAB500', width: '100px', height: '40px' }}>Ahorra</Button>
+              </Nav>
       <Navbar.Toggle aria-controls="navbar-menu" />
       <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
