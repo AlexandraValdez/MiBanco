@@ -1,0 +1,115 @@
+@media only screen and (max-width: 768px) {
+    .carousel-container {
+        width: 100vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        /* Esto previene que los hijos del contenedor desborden */
+        position: relative;
+        /* Establece un contexto de posicionamiento para hijos posicionados */
+        height: auto;
+    }
+
+    .carousel-wrapper {
+        display: flex;
+        /* Establece un layout flex para los hijos */
+        transition: transform 0.3s ease-in-out;
+        /* Transición suave al cambiar el slide */
+        width: 100%;
+        /* Asegura que el contenedor tome todo el ancho posible */
+    }
+
+    .carousel-item-principal {
+        box-sizing: border-box;
+        width: 100vw;
+        display: flex;
+        flex: 0 0 100%;
+        /* Cada ítem del carrusel tomará el 100% del ancho del contenedor del carrusel */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+
+    .carousel-item-img {
+        width: 100%;
+        /* Hace que la imagen tome el ancho máximo del contenedor padre */
+        height: auto;
+        /* Mantiene la proporción de la imagen */
+        object-fit: cover;
+        /* Asegura que la imagen cubra el espacio sin estirarse */
+        max-height: 90%;
+        /* Establece una altura máxima para la imagen */
+        position: relative;
+    }
+
+    .carousel-info,
+    .carousel-title,
+    .carousel-item-overlay,
+    .carousel-item-title {
+        position: relative;
+        z-index: 2;
+        /* Asegura que estos elementos estén por encima de las imágenes */
+    }
+
+    .carousel-dots {
+        display: flex;
+        /* Establece un layout flex para los puntos */
+        justify-content: center;
+        /* Centra los puntos horizontalmente */
+        margin-top: 65px;
+        position: relative;
+        z-index: 3;
+        /* Asegura que los puntos estén por encima de otros elementos */
+    }
+
+    .carousel-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        /* Hace que los puntos sean circulares */
+        background-color: #BAB8B8;
+        margin: 0 5px;
+        /* Espacio entre puntos */
+        cursor: pointer;
+        /* Cambia el cursor a mano al pasar por encima */
+    }
+
+    .carousel-dot.active {
+        background-color: #F2A000;
+        /* Color del punto activo */
+    }
+
+    .carousel-info {
+        height: 100px;
+        width: 250px;
+        font-size: 14px;
+        font-family: poppins;
+        /* Establece la fuente del texto */
+        /* text-align: right; */
+    }
+
+    .carousel-title {
+        /* text-align: right; */
+        font-size: 24px;
+        font-weight: bold;
+        /* Hace que el título sea en negrita */
+        color: #009640;
+        /* Color del título */
+    }
+
+    .carousel-item-overlay {
+        /* text-align: right; */
+        padding: 5px 0;
+    }
+
+    .carousel-item-title {
+        margin: 5px;
+        font-size: 24px;
+        font-weight: 700;
+        /* Establece un peso de fuente más pesado */
+        color: #333333;
+        /* Color del título del ítem */
+        /* text-align: right; */
+    }
+}

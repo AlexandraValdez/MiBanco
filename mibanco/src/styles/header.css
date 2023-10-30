@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+#navbar-menu{
+  display: flex;
+}
+.header-banner {
+  width: 100%;
+  height: auto;
+  right: 0%;
+  left: 0%;
+
+}
+.barra{
+  display: inline;
+  justify-content: space-between;
+}
+.barra .navbar-nav {
+  flex-direction: row;
+}
+#btn1{
+  background-color: #FAB500;
+  border-radius: 28px;
+  border-color: #FAB500;
+    font-family: Poppins;
+    margin: 0;
+    box-sizing: border-box;
+  
+}
+#btn2{
+  background-color: #FFFFFF;
+  border-radius: 28px;
+  border-color: #FAB500;
+}
+#container{
+  background: conic-gradient(from .5turn at center left, rgb(107, 190, 173), rgb(174, 241, 241));
+  height: 60px;
+  width: 100%;
+
+}
+
+p {
+  margin: 0;
+}
+@keyframes adjust-header {
+  to {
+    font-size: 40px;
+    height: 240px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header-banner {
+    width: 100%;
+}
+.d-inline-block{
+  width: 80px;
+  height: 40px;
+  flex-shrink: 0;
+}
+}
+
+
+/* Smartphones (portrait & landscape) */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+}
+
+
+/* header*/
+.header-container {
+ 
+  top: 0; /* Lo fija en la parte superior */
+  width: 100%; /* Toma todo el ancho de la ventana */
+  background-color: #FFFFFF; /* Cambia el color de fondo según tus necesidades */
+  z-index: 1000; /* Puedes ajustar este valor para controlar la superposición */
+  
+}
+/*fin header*/
