@@ -205,7 +205,7 @@ function App() {
             markersAgencias={markersAgencias}
             markersCajeros={markersCajeros}
           />
-                 <WazeLink />
+                 {/* <WazeLink /> */}
         <BannerApp />
         <Carrusel />
         <Contactanos />
