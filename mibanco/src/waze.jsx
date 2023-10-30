@@ -1,12 +1,14 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
 
 function WazeLink() {
   // Coordenadas de ejemplo
-//   const latitude = 37.7749;
-//   const longitude = -122.4194;
-const [latitud, setLatitud] = useState(null);
-const [longitud, setLongitud] = useState(null);
-const [loading, setLoading] = useState(true);
+  //   const latitude = 37.7749;
+  //   const longitude = -122.4194;
+  const [latitud, setLatitud] = useState(null);
+  const [longitud, setLongitud] = useState(null);
+  // eslint-disable-next-line no-unused-vars
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Comprobar si el navegador admite la API de geolocalización
@@ -41,12 +43,12 @@ const [loading, setLoading] = useState(true);
 
   const handleOpenWaze = () => {
     if (latitud !== null && longitud !== null) {
-        //consumiendo urlWaze
-        const url = `https://www.waze.com/ul?ll=${latitud},${longitud}&navigate=yes`;
-        window.open(url, '_blank');
-      } else {
-        console.error("Coordenadas no disponibles. Espere a que se obtenga la ubicación.");
-      }
+      //consumiendo urlWaze
+      const url = `https://www.waze.com/ul?ll=${latitud},${longitud}&navigate=yes`;
+      window.open(url, '_blank');
+    } else {
+      console.error("Coordenadas no disponibles. Espere a que se obtenga la ubicación.");
+    }
   };
 
   return (

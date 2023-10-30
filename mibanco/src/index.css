@@ -1,29 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-.contact{
+.contact {
   font-weight: 600;
   color: #009640;
   text-align: center;
 }
 
 
-.social-media{
+.social-media {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.social-icons{
+.social-icons {
   display: flex;
   align-items: flex-start;
-  
+
 }
-.btn-container{
+
+.btn-container {
   border-radius: 18.5px;
   font-weight: 600;
 }
 
-.icons-container{
+.icons-container {
   border-radius: 50%;
   cursor: pointer;
   padding: 10px 13px;
@@ -47,6 +48,7 @@
 button:hover {
   border-color: #4b4b4b;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -57,9 +59,11 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
