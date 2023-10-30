@@ -104,18 +104,25 @@ p {
 
 ul {
   list-style-type: none;
-  padding: 0;
   margin-top: 10px;
+  margin-left: -22px;
+  height: 350px;
+  background-color: white;
+  border: 3px solid #ccc;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
 }
 
 li {
   border: 1px solid #ccc;
-  padding: 10px;
+  padding: 20px;
+  margin-top: 10px;
   margin-bottom: 5px;
   border-radius: 5px;
   background-color: #f5f5f5;
 }
 
+<<<<<<< HEAD
 .selected {
   text-shadow: 2px rgba(0, 0, 0, 0.3);
 }
@@ -126,6 +133,8 @@ li {
   justify-content: center;
   align-content: center;
 }
+=======
+>>>>>>> ab492be16bd91f32f327b8252e676d586799a1c0
 
 /* media query buscador */
 
