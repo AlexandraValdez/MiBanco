@@ -10,97 +10,6 @@
 
 
 
-/* mapa */
-
-.container-fluid {
-  margin: 0;
-  padding-left: 0;
-  padding-right: 0;
-  width: auto;
-  height: auto;
-}
-
-
-
-
-
-<<<<<<< HEAD
-/* @media (min-width: 768px) {
-=======
-.busca {
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-}
-
-.cercano {
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 600;
-}
-
-.text-content {
-  display: flex;
-  margin-left: 1.8rem;
-}
-
-.filtro-container {
-  display: flex;
-  justify-content: space-around;
-  padding-top: 12px;
-  padding-bottom: 16px;
-  box-shadow: 0px -1px 0px rgba(200, 200, 200, 0.5);
-}
-
-.filtro-container .filtro-categoria {
-  /* margin-right: 18px; */
-  font-size: 14px;
-  line-height: 16px;
-}
-
-.filtro-container .filtro-categoria {
-  font-weight: bold;
-  vertical-align: middle;
-  color: #bababa;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  transition: transition 0.4s linear;
-}
-
-.filtro-container .filtro-categoria .activo {
-  color: #4a4a4a;
-}
-
-ul {
-  list-style-type: none;
-  margin-top: 10px;
-  margin-left: -22px;
-  height: 350px;
-  background-color: white;
-  border: 3px solid #ccc;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
-}
-
-li {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  border-radius: 5px;
-  background-color: #f5f5f5;
-}
-
-
-/* media query buscador */
-
-@media (max-width: 425px) {
-  .text-content {
-    display: none;
-  }
-}
-
 #btn1 {
   background-color: #FAB500;
   border-radius: 28px;
@@ -131,27 +40,7 @@ li {
   }
 }
 
-@media (min-width: 768px) {
->>>>>>> 4ff60a5e7cecaae2703fe7837c971958cb8b6e0c
-  .buscador-container {
-    width: 480px;
-    position: absolute;
-    border-radius: 12px;
-    height: 121px;
-    padding-left: 20px;
-    margin-top: 64px;
-    padding-right: 0px;
-  }
-} */
 
-
-
-
-<<<<<<< HEAD
-.google-map-container {
-  margin-top: 90px; /* Ajusta el valor según la altura de tu encabezado */
-  height: calc(100vh - 60px); /* Resta la altura del encabezado al 100% de la altura de la ventana */
-=======
 @media (min-width: 780px) {
   .footer {
     display: flex;
@@ -241,5 +130,4 @@ li {
     gap: 10px;
   }
 
->>>>>>> 4ff60a5e7cecaae2703fe7837c971958cb8b6e0c
 }
