@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useRef } from 'react';
+import '../styles/carrusel.css';
 
 // eslint-disable-next-line react/prop-types
 const CarouselItem = ({ image, altText, title, info }) => (
-    <div className="carousel-item">
-        <img src={image} alt={altText} />
+    <div className="carousel-item-principal">
+        <img className="carousel-item-img" src={image} alt={altText} width="100%" />
         <div className="carousel-item-overlay">  {/* Añadiendo un contenedor para el título */}
             <h3 className="carousel-item-title">{title}</h3>
         </div>
@@ -23,7 +24,7 @@ const CarouselItem = ({ image, altText, title, info }) => (
 const Carousel = () => {
     const slides = [
         {
-            image: "./src/img/cajero.png",
+            image: "./src/assets/cajero.png",
             altText: "Cajero",
             title: "Agencias",
             info: [
@@ -33,7 +34,7 @@ const Carousel = () => {
             ]
         },
         {
-            image: "./src/img/kasnet.png",
+            image: "./src/assets/Kasnet.png",
             altText: "Kasnet",
             title: "Agentes BCP y Kasnet",
             info: [
@@ -44,7 +45,7 @@ const Carousel = () => {
             ]
         },
         {
-            image: "./src/img/BCP.png",
+            image: "./src/assets/BCP.png",
             altText: "BCP",
             title: "Cajeros BCP",
             info: [
@@ -74,10 +75,10 @@ const Carousel = () => {
 
     const handleSwipeMove = (e) => {
         const currentX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
-        if (currentX - startX > 100) {  // swipe right
+        if (currentX - startX > 50) {  // swipe right
             setActiveSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
             handleSwipeEnd();
-        } else if (startX - currentX > 100) {  // swipe left
+        } else if (startX - currentX > 50) {  // swipe left
             setActiveSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
             handleSwipeEnd();
         }

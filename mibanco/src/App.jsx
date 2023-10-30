@@ -1,6 +1,7 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
 import GoogleMapReact from "./maps";
-import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
+// import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 
 import markerImageAgencia from "./img/agencias.svg";
 import markerImageAgentes from "./img/agentes.svg";
@@ -20,8 +21,11 @@ function App() {
   const [markersAgencias, setMarkersAgencias] = useState([]);
   const [markersAgentes, setMarkersAgentes] = useState([]);
   const [markersCajeros, setMarkersCajeros] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [latitudRef, setLatitudRef] = useState(null);
+  // eslint-disable-next-line no-unused-vars
   const [longitudRef, setLongitudRef] = useState(null);
+  // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(true);
   //   Agencia = Mibanco
   //  Agentes = kasnet
@@ -72,8 +76,8 @@ function App() {
     // lat -8.819135133
     // lng  -77.460973087
 
-    const latitudRef =  -12.063285;
-    const longitudRef =  -77.097447;
+    const latitudRef = -12.063285;
+    const longitudRef = -77.097447;
 
     // Crear una matriz de promesas para todas las solicitudes fetch
     const fetchPromises = [
@@ -185,6 +189,7 @@ function App() {
 
   //console.log("markersAgencias", markersAgencias);
 
+  // eslint-disable-next-line no-unused-vars
   const markersAgenciasFijo = [
     { lat: -12.05, lng: -77.002, image: markerImageAgencia },
     // Agrega más marcadores aquí
@@ -192,7 +197,7 @@ function App() {
 
   return (
     <>
-        < Header />
+      < Header />
       <div className="App">
         <Buscador />
         <GoogleMapReact
@@ -208,7 +213,7 @@ function App() {
       <Carousel />
       <Contactanos />
       <Siguenos />
-    <Footer />
+      <Footer />
     </>
   );
 }
