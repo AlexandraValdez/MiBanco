@@ -2,6 +2,9 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useRef } from 'react';
 import '../styles/carrusel.css';
+import cajero from "../assets/cajero.png";
+import agente from "../assets/Kasnet.png";
+import agencia from "../assets/BCP.png";
 
 // eslint-disable-next-line react/prop-types
 const CarouselItem = ({ image, altText, title, info }) => (
@@ -24,7 +27,7 @@ const CarouselItem = ({ image, altText, title, info }) => (
 const Carrusel = () => {
     const slides = [
         {
-            image: "./src/assets/cajero.png",
+            image: agencia,
             altText: "Cajero",
             title: "Agencias",
             info: [
@@ -34,7 +37,7 @@ const Carrusel = () => {
             ]
         },
         {
-            image: "./src/assets/Kasnet.png",
+            image: agente,
             altText: "Kasnet",
             title: "Agentes BCP y Kasnet",
             info: [
@@ -45,7 +48,7 @@ const Carrusel = () => {
             ]
         },
         {
-            image: "./src/assets/BCP.png",
+            image: cajero,
             altText: "BCP",
             title: "Cajeros BCP",
             info: [
