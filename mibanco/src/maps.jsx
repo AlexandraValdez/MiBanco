@@ -77,7 +77,7 @@ function Maps({ setLatitudRef,setLongitudRef,markersAgentes, markersAgencias, ma
   }
 
   return (
-    <div style={{ height: "50vh", width: "100%" }}>
+    <div style={{ height: "80vh", width: "100%" }}>
       <GoogleMapReact
         bootstrapURLKeys={{
           key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,

@@ -24,8 +24,8 @@ const CarouselItem = ({ image, altText, title, info }) => (
 const Carrusel = () => {
     const slides = [
         {
-            image: "./src/assets/cajero.png",
-            altText: "Cajero",
+            image: "./src/assets/BCP.png",
+            altText: "Agencias",
             title: "Agencias",
             info: [
                 "Haz tus operaciones con total seguridad en más de 2.300 cajeros BCP en todo el Perú.",
@@ -45,7 +45,7 @@ const Carrusel = () => {
             ]
         },
         {
-            image: "./src/assets/BCP.png",
+            image: "./src/assets/cajero.png",
             altText: "BCP",
             title: "Cajeros BCP",
             info: [
